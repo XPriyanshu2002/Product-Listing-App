@@ -169,9 +169,9 @@ footer {
     font-family: Arial, sans-serif;
 }
 
-body {
-    background-color: #E2EAF4;
-}
+/* body {
+    background-color: #fff;
+} */
 
 /* HEADER */
 /* .header {
@@ -229,8 +229,7 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 50px;
-    background-color:#E2EAF4;
-    ;
+    /* background-color:#E2EAF4; */
 }
 
 .hero-text {
@@ -279,7 +278,7 @@ body {
     display: flex;
     justify-content: space-around;
     padding: 30px;
-    background-color: #E2EAF4;
+    /* background-color: #E2EAF4; */
 }
 
 .category-card {
@@ -289,7 +288,7 @@ body {
     width: 20%;
     border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 

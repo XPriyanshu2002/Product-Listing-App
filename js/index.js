@@ -136,7 +136,7 @@ function hideLoading() {
 
 // Load more products
 document.getElementById("loadMore").addEventListener("click", () => {
-  displayedProducts += 10;
+  displayedProducts += 5;
   displayProducts(allProducts.slice(0, displayedProducts));
 });
 
