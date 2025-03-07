@@ -1,0 +1,71 @@
+<style>
+    .header {
+        display: flex;
+        width: 100%;
+        justify-content: space-around;
+        align-items: center;
+        background-color: #0056D2;
+        color: white;
+        padding: 15px 50px;
+    }
+
+    .logo {
+        font-size: 24px;
+        font-weight: bold;
+    }
+
+    .nav-links {
+        list-style: none;
+        display: flex;
+        gap: 20px;
+    }
+
+    .nav-links li a {
+        color: white;
+        text-decoration: none;
+        font-weight: 500;
+    }
+
+    .nav-links li a:hover {
+        text-decoration: underline;
+    }
+
+    .cart-icon {
+        position: relative;
+        font-size: 20px;
+        cursor: pointer;
+    }
+
+    .cart-badge {
+        position: absolute;
+        top: -8px;
+        right: -10px;
+        background-color: white;
+        color: #0056D2;
+        font-size: 12px;
+        font-weight: bold;
+        padding: 1.5px 3px;
+        border-radius: 50%;
+    }
+</style>
+<header class="header">
+    <!-- <link rel="stylesheet" href="../../css/styles.css"> -->
+    <h1 class="logo">VENIA</h1>
+    <nav>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Women</a></li>
+            <li><a href="#">Men</a></li>
+            <li><a href="#">Electronics</a></li>
+            <li><a href="#">Jewellery</a></li>
+        </ul>
+    </nav>
+    <div class="cart-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-cart2"
+            viewBox="0 0 16 16">
+            <path
+                d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5M3.14 5l1.25 5h8.22l1.25-5zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0m9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0" />
+        </svg>
+        <span class="cart-badge">10</span>
+    </div>
+</header>

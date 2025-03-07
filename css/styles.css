@@ -1,0 +1,388 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    display: flex;
+    align-items: center;
+    /* justify-content: space-between; */
+    padding: 10px;
+    background-color: #0056D2;
+    color: white;
+    z-index: 1000;
+}
+
+.filters, .sorting {
+    display: flex;
+    gap: 10px;
+    padding: 10px;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.product-card {
+    width: 220px; /* Adjust based on your design */
+    padding: 15px;
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    overflow: hidden; /* Ensures no overflow */
+}
+
+.product-card img {
+    width: 100%; /* Ensures it fits within the container */
+    height: 200px; /* Fixed height to maintain consistency */
+    object-fit: contain; /* Ensures the full image is visible */
+    border-radius: 8px; /* Optional for rounded corners */
+}
+
+button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+}
+
+footer {
+    background-color: #fff;
+    padding: 40px 80px;
+    /* border-top: 1px solid #ddd; */
+    font-family: Arial, sans-serif;
+}
+
+/* footer div {
+    background-color: #fff;
+    padding: 40px 80px;
+    border-top: 1px solid #ddd;
+    font-family: Arial, sans-serif;
+} */
+/*
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 200px;
+    margin-bottom: 20px;
+}
+
+.footer-section h4 {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 8px;
+}
+
+.footer-section ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 14px;
+}
+
+.footer-section p {
+    font-size: 14px;
+    color: #666;
+    max-width: 250px;
+}
+
+.social-icons {
+    margin-top: 10px;
+}
+
+.social-icons a {
+    margin-right: 10px;
+}
+
+.social-icons img {
+    width: 18px;
+    height: 18px;
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 20px;
+    border-top: 1px solid #ddd;
+    font-size: 14px;
+    color: #666;
+}
+
+.footer-bottom p {
+    margin: 5px 0;
+}
+
+.footer-links {
+    margin-top: 10px;
+}
+
+.footer-links a {
+    color: #333;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 14px;
+}
+
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-section {
+        margin-bottom: 15px;
+    }
+} */
+
+/* Reset & General Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #E2EAF4;
+}
+
+/* HEADER */
+/* .header {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #0056D2;
+    color: white;
+    padding: 15px 50px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.nav-links li a:hover {
+    text-decoration: underline;
+}
+
+.cart-icon {
+    position: relative;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.cart-badge {
+    position: absolute;
+    top: -8px;
+    right: -10px;
+    background-color: white;
+    color: #0056D2;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 4px 8px;
+    border-radius: 50%;
+} */
+
+/* HERO SECTION */
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px;
+    background-color:#E2EAF4;
+    ;
+}
+
+.hero-text {
+    width: 50%;
+}
+
+.hero-text h2 {
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.hero-text h2 span {
+    color: gray;
+}
+
+.hero-text p {
+    color: gray;
+    margin: 15px 0;
+}
+
+.shop-now {
+    background-color: #0056D2;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+.shop-now:hover {
+    background-color: #003d9a;
+}
+
+.hero-image {
+    width: 50%;
+}
+
+.hero-image img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* CATEGORY SECTION */
+.categories {
+    display: flex;
+    justify-content: space-around;
+    padding: 30px;
+    background-color: #E2EAF4;
+}
+
+.category-card {
+    background-color: white;
+    margin-top: -150px;
+    position: relative;
+    width: 20%;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.category-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+}
+
+.category-card img {
+    width: 100%;
+    height: auto;
+}
+
+.category-overlay {
+    position: absolute;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+}
+
+.loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loader button {
+    margin-inline: 15px;
+    background-color: #0056D2;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+.loader button:hover {
+    background-color: #003d9a;
+}
+
+/* Default styles (applies to all screen sizes) */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Mobile (320px and above) */
+  @media (min-width: 320px) {
+    body {
+      font-size: 14px;
+    }
+  }
+  
+  /* Tablet (768px and above) */
+  @media (min-width: 768px) {
+    body {
+      font-size: 16px;
+    }
+  }
+  
+  /* Desktop Small (1024px and above) */
+  @media (min-width: 1024px) {
+    body {
+      font-size: 18px;
+    }
+  }
+  
+  /* Desktop Medium (1280px and above) */
+  @media (min-width: 1280px) {
+    body {
+      font-size: 20px;
+    }
+  }
+  
+  /* Desktop Large (1440px and above) */
+  @media (min-width: 1440px) {
+    body {
+      font-size: 22px;
+    }
+  }
+  
+  /* Desktop X-Large (1920px and above) */
+  @media (min-width: 1920px) {
+    body {
+      font-size: 24px;
+    }
+  }
+  
+
+
