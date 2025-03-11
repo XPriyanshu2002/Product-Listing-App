@@ -167,112 +167,48 @@ document.addEventListener("DOMContentLoaded", function () {
 fetchProducts();
 
 // Load Header Dynamically
-// fetch("components/header.html")
-//   .then((response) => response.text())
-//   .then((data) => {
-//     console.log("Header Loaded Successfully!"); // Debugging
-//     document.getElementById("header").innerHTML = data;
-//   })
-//   .catch((error) => console.error("Error loading header:", error));.
-
 fetch("components/header.html")
   .then((response) => response.text())
-  .then(async (data) => {
+  .then((data) => {
+    console.log("Header Loaded Successfully!");
     document.getElementById("header").innerHTML = data;
+    const menuIcon = document.getElementById("menuIcon");
+    const sideDrawer = document.getElementById("sideDrawer");
+    const closeDrawer = document.getElementById("closeDrawer");
+    const overlay = document.getElementById("overlay");
+    const mobileFilters = document.getElementById("mobileFilters");
+    const dashboardLink = document.getElementById("dashboardLink");
 
-    // Initialize the side drawer functionality
-    document.addEventListener("DOMContentLoaded", function () {
-      let allProducts = [];
-      const menuIcon = document.getElementById("menuIcon");
-      const sideDrawer = document.getElementById("sideDrawer");
-      const closeDrawer = document.getElementById("closeDrawer");
-      const overlay = document.getElementById("overlay");
-      const priceRange = document.getElementById("priceRange");
-      const maxPriceLabel = document.getElementById("maxPriceLabel");
-      const categories = {
-        jewellery: "jewelery",
-        electronics: "electronics",
-        men: "men's clothing",
-        women: "women's clothing",
-      };
+    if (menuIcon && sideDrawer && closeDrawer && overlay && mobileFilters) {
+      // Open Side Drawer
+      menuIcon.addEventListener("click", function () {
+        sideDrawer.classList.add("show-drawer");
+        overlay.classList.add("show-overlay");
+      });
 
-      if (menuIcon && sideDrawer && closeDrawer && overlay) {
-        // Open Side Drawer
-        menuIcon.addEventListener("click", function () {
-          sideDrawer.classList.add("show-drawer");
-          overlay.classList.add("show-overlay");
-        });
+      // Close Side Drawer
+      closeDrawer.addEventListener("click", function () {
+        sideDrawer.classList.remove("show-drawer");
+        overlay.classList.remove("show-overlay");
+      });
 
-        // Close Side Drawer
-        closeDrawer.addEventListener("click", function () {
-          sideDrawer.classList.remove("show-drawer");
-          overlay.classList.remove("show-overlay");
-        });
+      // Close when clicking outside the drawer
+      overlay.addEventListener("click", function () {
+        sideDrawer.classList.remove("show-drawer");
+        overlay.classList.remove("show-overlay");
+      });
 
-        // Close when clicking outside the drawer
-        overlay.addEventListener("click", function () {
-          sideDrawer.classList.remove("show-drawer");
-          overlay.classList.remove("show-overlay");
-        });
+      mobileFilters.setAttribute("style", "display:none");
 
-        const selectedCategories = Object.keys(categories).filter(
-          (id) => document.getElementById(id)?.checked
-        );
-
-        console.log("Selected Categories:", selectedCategories);
-        console.log(window.location.pathname === "/");
-
-        // Attach event listeners to checkboxes
-        Object.keys(categories).forEach((id) => {
-          const checkbox = document.getElementById(id);
-          if (checkbox) {
-            checkbox.addEventListener("change", fetchAndSendProducts);
-          } else {
-            console.error(`Element with id '${id}' not found!`);
-          }
-        });
-
-        const fetchAndSendProducts = async () => {
-          const productPromises = selectedCategories.map((id) =>
-            fetch(
-              `https://fakestoreapi.com/products/category/${categories[id]}`
-            ).then((res) => res.json())
-          );
-
-          allProducts = (await Promise.all(productPromises)).flat();
-
-          // Set max price dynamically based on fetched products
-          const maxPrice = Math.max(...allProducts.map((p) => p.price));
-          priceRange.max = Math.ceil(maxPrice);
-          priceRange.value = maxPrice;
-          maxPriceLabel.textContent = `$${maxPrice.toFixed(2)}`;
-
-          let filteredProducts = allProducts
-            .filter((p) => p.price <= parseFloat(priceRange.value)) // Filter by price
-            .filter((p) =>
-              p.title.toLowerCase().includes(searchInput.value.toLowerCase())
-            ); // Filter by search
-
-          // Display products
-          window.sharedData = filteredProducts;
-        };
-
-        // Fetch products for all selected categories
-      } else {
-        console.error("One or more elements are missing!");
-      }
-    });
+      dashboardLink.addEventListener("click", function () {
+        console.log(window.location.pathname)
+        window.location.href = "components/shopNow/shopNow.html";
+      });
+    } else {
+      console.error("One of the elements is null");
+    }
   })
   .catch((error) => console.error("Error loading header:", error));
-
-// Load Dashboard1 Dynamically
-// fetch("components/home/dashboard1.html")
-//   .then((response) => response.text())
-//   .then((data) => {
-//     console.log("Dashboard1 Loaded Successfully!"); // Debugging
-//     document.getElementById("dashboard1").innerHTML = data;
-//   })
-//   .catch((error) => console.error("Error loading Dashboard1:", error));
 
 // Load Footer Dynamically
 fetch("components/footer.html")

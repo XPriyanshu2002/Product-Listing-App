@@ -318,13 +318,15 @@
         <div class="side-drawer" id="sideDrawer">
             <button class="close-btn" id="closeDrawer">&times;</button>
             <ul class="drawer-links">
-                <li><a href="#">Home</a></li>
+                <li><a id="homeLink" href="#">Home</a></li>
+                <li><a id="dashboardLink" href="#">Dashboard</a></li>
+                <!-- <li><h4 style="color: black; font-weight: bold;">Categories</h4></li> -->
                 <li><a href="#">Women</a></li>
                 <li><a href="#">Men</a></li>
                 <li><a href="#">Electronics</a></li>
                 <li><a href="#">Jewellery</a></li>
             </ul>
-            <div style="color: black;" class="mobile-filters">
+            <div id="mobileFilters" style="color: black;" class="mobile-filters">
                 <hr>
                 <h2>Filters</h2>
                 <div class="filter-category">
@@ -347,7 +349,7 @@
         <div class="overlay" id="overlay"></div>
     </header>
     <script src="../js/index.js" defer></script>
-    <script src="./shopNow/shopNow.js" defer></script>
+    <!-- <script src="./shopNow/shopNow.js" defer></script> -->
     <!-- <script type="module">
         import { displayProducts } from './shopNow/shopNow.js';
         displayProducts();
