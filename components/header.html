@@ -1,71 +1,357 @@
-<style>
-    .header {
-        display: flex;
-        width: 100%;
-        justify-content: space-around;
-        align-items: center;
-        background-color: #0056D2;
-        color: white;
-        padding: 15px 50px;
-    }
+<!DOCTYPE html>
+<html lang="en">
 
-    .logo {
-        font-size: 24px;
-        font-weight: bold;
-    }
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Header with Side Drawer</title>
+    <!-- <link rel="stylesheet" href="./shopNow/shopNow.css"> -->
+    <style>
+        @media (min-width: 320px) {
+            .header {
+                /* padding: 0px 0px; */
+                display: flex;
+                width: 100%;
+                justify-content: space-between;
+                align-items: center;
+                background-color: #0056D2;
+                color: white;
+            }
 
-    .nav-links {
-        list-style: none;
-        display: flex;
-        gap: 20px;
-    }
+            .logo {
+                font-size: 20px;
+                font-weight: bold;
+            }
 
-    .nav-links li a {
-        color: white;
-        text-decoration: none;
-        font-weight: 500;
-    }
+            .nav {
+                display: none;
+            }
 
-    .nav-links li a:hover {
-        text-decoration: underline;
-    }
+            .cart-icon {
+                position: relative;
+                font-size: 20px;
+                cursor: pointer;
+            }
 
-    .cart-icon {
-        position: relative;
-        font-size: 20px;
-        cursor: pointer;
-    }
+            .cart-badge {
+                position: absolute;
+                top: -8px;
+                right: -10px;
+                background-color: white;
+                color: #0056D2;
+                font-size: 12px;
+                font-weight: bold;
+                padding: 1.5px 3px;
+                border-radius: 50%;
+            }
 
-    .cart-badge {
-        position: absolute;
-        top: -8px;
-        right: -10px;
-        background-color: white;
-        color: #0056D2;
-        font-size: 12px;
-        font-weight: bold;
-        padding: 1.5px 3px;
-        border-radius: 50%;
-    }
-</style>
-<header class="header">
-    <!-- <link rel="stylesheet" href="../../css/styles.css"> -->
-    <h1 class="logo">VENIA</h1>
-    <nav>
-        <ul class="nav-links">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Women</a></li>
-            <li><a href="#">Men</a></li>
-            <li><a href="#">Electronics</a></li>
-            <li><a href="#">Jewellery</a></li>
-        </ul>
-    </nav>
-    <div class="cart-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-cart2"
-            viewBox="0 0 16 16">
-            <path
-                d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5M3.14 5l1.25 5h8.22l1.25-5zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0m9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0" />
-        </svg>
-        <span class="cart-badge">10</span>
-    </div>
-</header>
+            .menu-icon {
+                cursor: pointer;
+            }
+
+            .mobile-filters {
+                margin-top: 5px;
+            }
+
+        }
+
+        /* Tablet (768px and above) */
+        @media (min-width: 768px) {
+            .menu-icon {
+                display: none;
+            }
+
+            .nav {
+                display: block;
+            }
+
+            .header {
+                display: flex;
+                width: 100%;
+                justify-content: space-around;
+                align-items: center;
+                background-color: #0056D2;
+                color: white;
+                padding: 15px 50px;
+            }
+
+            .nav-links {
+                list-style: none;
+                display: flex;
+                gap: 20px;
+            }
+
+            .nav-links li a {
+                color: white;
+                text-decoration: none;
+                font-weight: 500;
+            }
+
+            .nav-links li a:hover {
+                text-decoration: underline;
+            }
+
+            .cart-icon {
+                position: relative;
+                font-size: 20px;
+                cursor: pointer;
+            }
+
+            .cart-badge {
+                position: absolute;
+                top: -8px;
+                right: -10px;
+                background-color: white;
+                color: #0056D2;
+                font-size: 12px;
+                font-weight: bold;
+                padding: 1.5px 3px;
+                border-radius: 50%;
+            }
+
+            .logo {
+                font-size: 24px;
+                font-weight: bold;
+            }
+
+            .side-drawer {
+                display: none;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .header {
+                display: flex;
+                width: 100%;
+                justify-content: space-around;
+                align-items: center;
+                background-color: #0056D2;
+                color: white;
+                padding: 15px 50px;
+            }
+
+            .nav-links {
+                list-style: none;
+                display: flex;
+                gap: 20px;
+            }
+
+            .nav-links li a {
+                color: white;
+                text-decoration: none;
+                font-weight: 500;
+            }
+
+            .nav-links li a:hover {
+                text-decoration: underline;
+            }
+
+            .cart-icon {
+                position: relative;
+                font-size: 20px;
+                cursor: pointer;
+            }
+
+            .cart-badge {
+                position: absolute;
+                top: -8px;
+                right: -10px;
+                background-color: white;
+                color: #0056D2;
+                font-size: 12px;
+                font-weight: bold;
+                padding: 1.5px 3px;
+                border-radius: 50%;
+            }
+
+            .logo {
+                font-size: 24px;
+                font-weight: bold;
+            }
+        }
+
+        /* Desktop Large (1440px and above) */
+        @media (min-width: 1440px) {
+            .header {
+                display: flex;
+                width: 100%;
+                justify-content: space-around;
+                align-items: center;
+                background-color: #0056D2;
+                color: white;
+                padding: 15px 50px;
+            }
+
+            .nav-links {
+                list-style: none;
+                display: flex;
+                gap: 20px;
+            }
+
+            .nav-links li a {
+                color: white;
+                text-decoration: none;
+                font-weight: 500;
+            }
+
+            .nav-links li a:hover {
+                text-decoration: underline;
+            }
+
+            .cart-icon {
+                position: relative;
+                font-size: 20px;
+                cursor: pointer;
+            }
+
+            .cart-badge {
+                position: absolute;
+                top: -8px;
+                right: -10px;
+                background-color: white;
+                color: #0056D2;
+                font-size: 12px;
+                font-weight: bold;
+                padding: 1.5px 3px;
+                border-radius: 50%;
+            }
+
+            .logo {
+                font-size: 24px;
+                font-weight: bold;
+            }
+        }
+
+        /* Side Drawer Styles */
+        .side-drawer {
+            position: fixed;
+            top: 0;
+            left: -250px;
+            /* Hidden initially */
+            width: 250px;
+            height: 100%;
+            background-color: white;
+            box-shadow: 2px 0px 10px rgba(0, 0, 0, 0.2);
+            transition: left 0.3s ease-in-out;
+            padding: 20px;
+            z-index: 1000;
+        }
+
+        .drawer-links {
+            list-style: none;
+            padding: 0;
+        }
+
+        .drawer-links li {
+            margin: 20px 0;
+        }
+
+        .drawer-links a {
+            text-decoration: none;
+            color: #0056D2;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .close-btn {
+            font-size: 24px;
+            border: none;
+            background: none;
+            cursor: pointer;
+            position: absolute;
+            top: 10px;
+            right: 20px;
+        }
+
+        /* Overlay to dim background */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+            display: none;
+        }
+
+        /* Show drawer */
+        .show-drawer {
+            left: 0 !important;
+        }
+
+        /* Show overlay */
+        .show-overlay {
+            display: block !important;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <div class="menu-icon" id="menuIcon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-list"
+                viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                    d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5" />
+            </svg>
+        </div>
+        <div class="logo">VENIA</div>
+        <nav class="nav">
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Women</a></li>
+                <li><a href="#">Men</a></li>
+                <li><a href="#">Electronics</a></li>
+                <li><a href="#">Jewellery</a></li>
+            </ul>
+        </nav>
+        <div class="cart-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-cart2"
+                viewBox="0 0 16 16">
+                <path
+                    d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5M3.14 5l1.25 5h8.22l1.25-5zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0m9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0" />
+            </svg>
+            <span class="cart-badge">10</span>
+        </div>
+        <!-- Side Drawer -->
+        <div class="side-drawer" id="sideDrawer">
+            <button class="close-btn" id="closeDrawer">&times;</button>
+            <ul class="drawer-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Women</a></li>
+                <li><a href="#">Men</a></li>
+                <li><a href="#">Electronics</a></li>
+                <li><a href="#">Jewellery</a></li>
+            </ul>
+            <div style="color: black;" class="mobile-filters">
+                <hr>
+                <h2>Filters</h2>
+                <div class="filter-category">
+                    <br>
+                    <h3 style="margin-bottom: 10px; font-weight: bold;">Categories</h3>
+                    <label><input type="checkbox" checked id="mobile-jewellery"> Jewellery</label>
+                    <label><input type="checkbox" checked id="mobile-electronics"> Electronics</label>
+                    <label><input type="checkbox" checked id="mobile-men"> Men's Clothing</label>
+                    <label><input type="checkbox" checked id="mobile-women"> Women's Clothing</label>
+                </div>
+                <br>
+                <!-- Price Range Filter -->
+                <div class="filter-category">
+                    <h3 style="font-weight: bold;">Price Range</h3>
+                    <input type="range" id="mobile-priceRange" min="0" max="200" step="1" value="200">
+                    <p>Max Price: <span id="mobile-maxPriceLabel">200</span></p>
+                </div>
+            </div>
+        </div>
+        <div class="overlay" id="overlay"></div>
+    </header>
+    <script src="../js/index.js" defer></script>
+    <script src="./shopNow/shopNow.js" defer></script>
+    <!-- <script type="module">
+        import { displayProducts } from './shopNow/shopNow.js';
+        displayProducts();
+    </script> -->
+</body>
+
+</html>
